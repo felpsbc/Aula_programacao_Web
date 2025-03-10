@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+    <h1 align="center">TÍTULO PRINCIPAL</h1>
+    <hr width="75%" size="2" noshade="" align="center" color="black">
+    <p align="right"><b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <br><br>
+
+    <h3 align="left">SEGUNDO TÍTULO</h3>
+    <p align="left"><i>Lorem ipsum</i> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <br><br>
+
+    <h4 align="right">TERCEIRO TÍTULO</h4>
+    <p align="justify"><u>Lorem ipsum dolor </u>sit amet, consectetur adipiscing elit, <mark>do eiusmod tempor incididunt ut labore et dolore magna aliqua.</mark> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <br><br>
+
+    <hr width="80%" size="60" color="blue">
+
+
+
+    <h3>Lista Numerada - Produtos de Informática</h3>
+    <ol>
+        <li>Notebook</li>
+        <li>Mouse</li>
+        <li>Teclado</li>
+        <li>Monitor</li>
+        <li>Impressora</li>
+        <li>HD Externo</li>
+        <li>Placa de Vídeo</li>
+        <li>Memória RAM</li>
+        <li>Processador</li>
+        <li>Roteador</li>
+    </ol>
+    
+    <h3>Lista Não Numerada - Produtos Escolares</h3>
+    <ul>
+        <li>Caderno</li>
+        <li>Caneta</li>
+        <li>Lápis</li>
+        <li>Borracha</li>
+        <li>Apontador</li>
+        <li>Régua</li>
+        <li>Mochila</li>
+        <li>Estojo</li>
+        <li>Papel Sulfite</li>
+        <li>Marca-texto</li>
+    </ul>
+    
+    <h3>Lista de Definição</h3>
+    <dl>
+        <dt>MEC</dt>
+        <dd>Ministério da Educação e Cultura</dd>
+        <dt>CEUB</dt>
+        <dd> Serviço Nacional de Aprendizagem Industrial</dd>
+        <dt>CCO</dt>
+        <dd>Ciência da Computação</dd>
+        <dt>ADS</dt>
+        <dd>Análise e Desenvolvimento de Sistemas</dd>
+        <dt>CD</dt>
+        <dd>Ciência de Dados</dd>
+    </dl>
+    <br><br>
+
+    <h3>Disciplina de Análise Matemática</h3>
+    <blockquote><blockquote>Notas de 1999/2000</blockquote></blockquote>
+
+    <table border="3">
+        <tr>
+            <th><i><font face="Arial" color="blue">Aluno</font></i></th>
+            <th><i><font face="Arial" color="blue">Frequência</font></i></th>
+            <th><i><font face="Arial" color="blue">1° Chamada</font></i></th>
+            <th><i><font face="Arial" color="blue">2° Chamada</font></i></th>
+            <th><i><font face="Arial" color="blue">Final</font></i></th>
+        </tr>
+    
+        <tr>
+            <th style="background-color:pink;"><font face="Arial">Ana Maria</font></th>
+            <td style="background-color: yellow;"><font face="Arial">12.5</font></td>
+            <td style="background-color: yellow;"><font face="Arial">14.2</font></td>
+            <td style="background-color: yellow;"></td>
+            <th style="background-color: red;"><font face="Arial">14</font></th>
+        </tr>
+    
+        <tr>
+            <th style="background-color:pink;"><font face="Arial">João</font></th>
+            <td style="background-color: yellow;"><font face="Arial">11.5</font></td>
+            <td style="background-color: yellow;"><font face="Arial">12.2</font></td>
+            <td style="background-color: yellow;"></td>
+            <th style="background-color: red;"><font face="Arial">13</font></th>
+        </tr>
+    
+        <tr>
+            <th style="background-color:pink;"><font face="Arial">Rui Manoel</font></th>
+            <td style="background-color: yellow;"><font face="Arial">12.5</font></td>
+            <td style="background-color: yellow;"><font face="Arial">13.2</font></td>
+            <td style="background-color: yellow;"></td>
+            <th style="background-color: red;"><font face="Arial">13</font></th>
+        </tr>
+        
+        <tr>
+            <th colspan="4"><i><font face="Arial" color="blue">Média</font></i></th>
+            <th><font face="Arial" color="blue">13.3</font></th>
+        </tr>
+    </table>
+    <br><br>
+
+    <table border="1">
+        <tr>
+            <td rowspan="2" colspan="3"></td>
+            <th colspan="3" style="background-color: yellow;">Demografia</th>
+        </tr>
+        <tr>
+            <th style="background-color: yellow;">Homens</th>
+            <th style="background-color: yellow;">Meninas</th>
+            <th style="background-color: yellow;">Professor</th>
+        </tr>
+        <tr>
+            <th rowspan="4" colspan="2" style="background-color: yellow;">Turmas</th>
+            <th style="background-color: yellow;">A</th>
+            <td style="background-color: yellow;">20</td>
+            <td style="background-color: yellow;">5</td>
+            <td style="background-color: yellow;">João<br>Pedro</td>
+        </tr>
+        <tr>
+            <th style="background-color: yellow;">B</th>
+            <td style="background-color: yellow;">21</td>
+            <td style="background-color: yellow;">3</td>
+            <td style="background-color: yellow;">idem</td>
+        </tr>
+        <tr>
+            <th style="background-color: yellow;">C</th>
+            <td style="background-color: yellow;">25</td>
+            <td style="background-color: yellow;">2</td>
+            <td style="background-color: yellow;">Maria<br>João</td>
+        </tr>
+        <tr>
+            <th style="background-color: yellow;">D</th>
+            <td style="background-color: yellow;">20</td>
+            <td style="background-color: yellow;">4</td>
+            <td style="background-color: yellow;">idem</td>
+        </tr>
+        <tr>
+            <th colspan="3" style="background-color: yellow;">Total</th>
+            <td style="background-color: yellow;">86</td>
+            <td style="background-color: yellow;">14</td>
+            <td style="background-color: yellow;">2</td>
+        </tr>
+    </table>
+    <p><strong>Tabela 1. Estatísticas.</strong></p>
+
+    <br><br>
+    <blockquote>Felipe Barcelos de Carvalho</blockquote>
+    <blockquote><Blockquote>Ciência da Computação</Blockquote></blockquote>
+
+
+</body>
+</html>
