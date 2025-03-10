@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula_01</title>
+</head>
+<body>
+    
+    <center>Mudando o estilo de Caracteres</center>
+    <p>
+        <b>Texto em Negrito</b><br>
+        <i>Texto em Italico</i><br>
+        <u>Texto Sublinhado</u><br>
+        <tt>Texto com Monoespaço</tt><br>
+        <br>
+        <font color="blue">Texto em vermelho</font>
+        <br>
+        <font size="18">Tamanho de fonte</font>
+        <br>
+        <h1>Tamanho de Titulo</h1><br>
+        <h2>Tamanho Subtitulo</h2><br>
+        <h3>Tamanho Subtitulo h3</h3><br>
+        <h4>Tamanho h4</h4><br>
+
+        <center><Font face="Impact" size="7" color="Pink">Olá Munde!</Font></center>
+        <br>
+        <pre>
+                                    Centro Universitário de Brasília
+                                               (CEUB)
+                                        Ciência da Computação
+                                            Programação Web
+        </pre>
+    </p>
+    <hr width="75%" size="2" noshade="" align="center" color="black">
+
+    <br>
+
+    <!-- Alinhamento de Textos e paragrafos -->
+    <center><font face="arial black" size="5" color="red">Alinhamento de Textos e Paragrafos</font></center>
+    <h4 align="center">Titulo centralizado</h4>
+    <h4 align="right">Titulo na direita</h4>
+    <h4 align="left">Titulo na esquerda</h4>
+
+    <hr>
+
+    <p align="center"><b>Alinhado ao centro </b>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur adipisci mollitia expedita maiores unde nulla quam cum est! Fuga a consectetur totam veniam modi amet, ab voluptatum iste culpa illum? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta ex aperiam repellat commodi. Quod, itaque impedit. Dicta nostrum, pariatur facilis autem commodi, a laboriosam placeat hic error eaque dolorem perferendis.</p>
+
+    <hr width="75%" size="2" noshade="" align="center" color="black">
+
+    <p align="left"><b>Paragrafo alinha à esquerda</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis porro aliquam voluptatibus a iste! Quasi, doloremque ea dolor et, eius corporis accusantium iusto earum alias non totam obcaecati officiis eveniet!</p>
+
+    <hr width="75%" size="2" noshade="" align="center" color="black">
+
+    <p align="justify"><b>Alinhamento justificado </b>Lorem ipsum dolor <mark> LATIM </mark> amet consectetur, adipisicing elit. Pariatur adipisci mollitia expedita maiores unde nulla quam cum est! Fuga a <span style="background-color: blueviolet;">totam veniam modi amet, </span>  ab voluptatum iste culpa illum? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta ex aperiam repellat commodi. Quod, itaque impedit. Dicta nostrum, pariatur facilis autem commodi, a laboriosam placeat hic error eaque dolorem perferendis.</p>
+    <marquee behavior="" direction=""> AULA HTML</marquee>
+
+    <hr width="75%" size="2" noshade="" align="center" color="black">
+
+    <h3>Lista Numerada</h3>
+    <ol>
+        <li><font size="3" face="Courier New">Lápis</font></li>
+        <li><font size="3" face="Courier New">Caderno</font></li>
+        <li><font size="3" face="Courier New">Caneta</font></li>
+    </ol>
+
+    <h3>Lista Não Numerada</h3>
+    <!--Disk, Square, circle-->
+    <ul>
+        <li>Mesa</li>
+        <li>Cadeira</li>
+        <li>Sofá</li>
+    </ul>
+
+    <h3>Lista de Definição</h3>
+    <dt>Gentle</dt>
+    <dd>Dócil, manso, manco, mano, dano <br>
+        pacato, marcado, falado
+    </dd>
+    <dt>Gentle Folk</dt>
+    <dd>Nobre, cobre, dobre</dd>
+
+    <hr width="75%" size="2" noshade="" align="center" color="black">
+
+    <h1>Tabela - 1</h1>
+
+    <!-- linha 1 -->
+    <table border="3">
+        <tr>
+            <td>Itens/mês</td>
+            <th>Janeiro</th>
+            <th>Fervereiro</th>
+            <th>Março</th>
+        </tr>
+    
+    <!-- Linha 2 -->
+        <tr>
+            <th>Usuário</th>
+            <td>80</td>
+            <td>65</td>
+            <td>79</td>
+        </tr>
+    
+    <!-- Linha 3 -->
+        <tr>
+            <th>Linhas</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <h1>Tabela_2</h1>
+    <table border="2">
+
+        <tr>
+            <td>Primeira célula</td>
+            <td>Segunda célula</td>
+            <td>Terceira célula</td>
+        </tr>
+        <tr>
+            <td align="center">Centro</td>
+            <td align="left">esquerda</td>
+            <td align="right">Direita</td>
+        </tr>
+    </table>
+
+    <h1>Tabela_3</h1>
+    <table border="1" style="background-color: crimson;
+    padding: 10px; margin: 10 px;" width="100" height="50" cellspacing="10">
+
+        <tr>
+            <td>Teste para ver a celula funcionar bordas inferiores e superiores</td>
+            <td valing="top">top</td>
+            <td valing="middle">Mid</td>
+            <td valing="bottom">bottom</td>
+        </tr>
+    </table>
+
+    <h1>Tabela_4</h1>
+    <table border="4">
+        <tr>
+            <td colspan="3">3 colunas</td>
+            <td>normal</td>
+            <td>normal</td>
+        </tr>
+        <tr>
+            <td>col 1</td>
+            <td>col 2</td>
+            <td>col 3</td>
+            <td>col 4</td>
+            <td>col 5</td>
+        </tr>
+
+    </table>
+
+    <h1>Tabela_5</h1>
+    <table border="1">
+        <tr>
+            <td rowspan="3">3 linhas</td>
+            <td>col 2</td>
+            <td>col 3</td>
+            <td>col 4</td>
+            <td>col 5</td>
+        </tr>
+        <tr>
+            <td>Col 2</td>
+            <td>Col 3</td>
+            <td>Col 4</td>
+            <td>Col 5</td>
+        </tr>
+        <tr>
+            <td>col 2</td>
+            <td>col 3</td>
+            <td>col 4</td>
+            <td>col 5</td>
+        </tr>
+    </table>
