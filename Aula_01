@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula_01</title>
+</head>
+<body>
+    
+    <center>Mudando o estilo de Caracteres</center>
+    <p>
+        <b>Texto em Negrito</b><br>
+        <i>Texto em Italico</i><br>
+        <u>Texto Sublinhado</u><br>
+        <tt>Texto com Monoespaço</tt><br>
+        <br>
+        <font color="blue">Texto em vermelho</font>
+        <br>
+        <font size="18">Tamanho de fonte</font>
+        <br>
+        <h1>Tamanho de Titulo</h1><br>
+        <h2>Tamanho Subtitulo</h2><br>
+        <h3>Tamanho Subtitulo h3</h3><br>
+        <h4>Tamanho h4</h4><br>
+
+        <center><Font face="Impact" size="7" color="Pink">Olá Munde!</Font></center>
+        <br>
+        <pre>
+                                    Centro Universitário de Brasília
+                                               (CEUB)
+                                        Ciência da Computação
+                                            Programação Web
+        </pre>
+    </p>
+    <hr width="75%" size="2" noshade="" align="center" color="black">
+
+    <br>
+
+    <!-- Alinhamento de Textos e paragrafos -->
+    <center><font face="arial black" size="5" color="red">Alinhamento de Textos e Paragrafos</font></center>
+    <h4 align="center">Titulo centralizado</h4>
+    <h4 align="right">Titulo na direita</h4>
+    <h4 align="left">Titulo na esquerda</h4>
+
+    <hr>
+
+    <p align="center"><b>Alinhado ao centro </b>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur adipisci mollitia expedita maiores unde nulla quam cum est! Fuga a consectetur totam veniam modi amet, ab voluptatum iste culpa illum? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta ex aperiam repellat commodi. Quod, itaque impedit. Dicta nostrum, pariatur facilis autem commodi, a laboriosam placeat hic error eaque dolorem perferendis.</p>
+
+    <hr width="75%" size="2" noshade="" align="center" color="black">
+
+    <p align="left"><b>Paragrafo alinha à esquerda</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis porro aliquam voluptatibus a iste! Quasi, doloremque ea dolor et, eius corporis accusantium iusto earum alias non totam obcaecati officiis eveniet!</p>
+
+    <hr width="75%" size="2" noshade="" align="center" color="black">
+
+    <p align="justify"><b>Alinhamento justificado </b>Lorem ipsum dolor <mark> LATIM </mark> amet consectetur, adipisicing elit. Pariatur adipisci mollitia expedita maiores unde nulla quam cum est! Fuga a <span style="background-color: blueviolet;">totam veniam modi amet, </span>  ab voluptatum iste culpa illum? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta ex aperiam repellat commodi. Quod, itaque impedit. Dicta nostrum, pariatur facilis autem commodi, a laboriosam placeat hic error eaque dolorem perferendis.</p>
+    <marquee behavior="" direction=""> AULA HTML</marquee>
+
+
+
+</body>
+</html>
