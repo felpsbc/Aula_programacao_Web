@@ -507,132 +507,156 @@
     <br>
 
 
-    <section class="recomendacoes">
+    <section class="products_recomendacoes">
       <h1 id="recomendacoes">Recomendações</h1>
       <br />
       
-      <div class="tamanho-quadro">
-        <h2><i class="fas fa-ruler-combined"></i> Tabela de Tamanhos de Quadro</h2>
-        <p>Confira a tabela abaixo para escolher o quadro ideal de acordo com sua altura e idade:</p>
+      <section class="size-guide">
+        <h2 id="tamanhos">Guia de Tamanhos</h2>
+        <br />
+        <p class="subtitle">Tabela completa para escolha do quadro ideal</p>
         <br />
         
-        <div class="table-container">
-          <table class="tabela-tamanhos">
+        <div class="table-responsive">
+          <table class="size-table">
             <thead>
+              <tr>
+                <th rowspan="2">Categoria</th>
+                <th colspan="4">Especificações Técnicas</th>
+              </tr>
               <tr>
                 <th>Altura do Ciclista</th>
                 <th>Idade</th>
-                <th>Tamanho do Quadro (polegadas)</th>
-                <th>Tamanho do Quadro (cm)</th>
+                <th>Tamanho do Quadro</th>
                 <th>Tamanho do Aro</th>
               </tr>
             </thead>
             <tbody>
+              <!-- Crianças Pequenas -->
               <tr>
-                <td>0,85 - 1,10 m</td>
+                <td rowspan="2" class="merged-row-1">Crianças Pequenas</td>
+                <td class="merged-col-1">0,85 - 1,10 m</td>
                 <td>3-6 anos</td>
-                <td>8-10"</td>
-                <td>20-25 cm</td>
+                <td>8-10" (20-25 cm)</td>
                 <td>12-14"</td>
               </tr>
               <tr>
-                <td>1,10 - 1,25 m</td>
+                <td class="merged-col-1">1,10 - 1,25 m</td>
                 <td>5-8 anos</td>
-                <td>10-12"</td>
-                <td>25-30 cm</td>
+                <td>10-12" (25-30 cm)</td>
                 <td>16"</td>
               </tr>
+              
+              <!-- Crianças/Jovens -->
               <tr>
-                <td>1,25 - 1,45 m</td>
+                <td rowspan="2" class="merged-row-2">Crianças/Jovens</td>
+                <td class="merged-col-2">1,25 - 1,45 m</td>
                 <td>7-12 anos</td>
-                <td>12-14"</td>
-                <td>30-35 cm</td>
+                <td>12-14" (30-35 cm)</td>
                 <td>20"</td>
               </tr>
               <tr>
-                <td>1,45 - 1,60 m</td>
+                <td class="merged-col-2">1,45 - 1,60 m</td>
                 <td>11+ anos</td>
-                <td>14-16"</td>
-                <td>35-40 cm</td>
+                <td>14-16" (35-40 cm)</td>
                 <td>24"</td>
               </tr>
+              
+              <!-- Adultos -->
               <tr>
-                <td>1,60 - 1,70 m</td>
+                <td rowspan="2" class="merged-row-3">Adultos</td>
+                <td class="merged-col-3">1,60 - 1,70 m</td>
                 <td>Adulto</td>
-                <td>16-17"</td>
-                <td>40-43 cm</td>
+                <td>16-17" (40-43 cm)</td>
                 <td>26"</td>
               </tr>
               <tr>
-                <td>1,70 - 1,80 m</td>
+                <td class="merged-col-3">1,70 - 1,80 m</td>
                 <td>Adulto</td>
-                <td>17-18"</td>
-                <td>43-46 cm</td>
+                <td>17-18" (43-46 cm)</td>
                 <td>26-27,5"</td>
               </tr>
+              
+              <!-- Adultos Altos -->
               <tr>
-                <td>1,80 - 1,90 m</td>
+                <td rowspan="2" class="merged-row-4">Adultos Altos</td>
+                <td class="merged-col-4">1,80 - 1,90 m</td>
                 <td>Adulto</td>
-                <td>18-20"</td>
-                <td>46-51 cm</td>
+                <td>18-20" (46-51 cm)</td>
                 <td>27,5-29"</td>
               </tr>
               <tr>
-                <td>1,90 m+</td>
+                <td class="merged-col-4">1,90 m+</td>
                 <td>Adulto</td>
-                <td>20-22"</td>
-                <td>51-56 cm</td>
+                <td>20-22" (51-56 cm)</td>
                 <td>29"</td>
               </tr>
             </tbody>
           </table>
         </div>
-      </div>
+      </section>
+      <br>
       
-      <br />
-      <hr class="divider" />
-      <br />
-      
-      <div class="seguranca">
-        <h2><i class="fas fa-shield-alt"></i> Itens de Segurança Essenciais</h2>
-        <p>Para pedalar com segurança, recomendamos os seguintes itens:</p>
-        <br />
+      <section class="itens-essenciais-lista">
+        <h2>Itens Essenciais</h2>
+        <p class="subtitulo">Para pedalar com segurança, recomendamos:</p>
         
-        <ol class="lista-seguranca">
-          <li>
-            <strong>Capacete</strong> - Item mais importante, deve estar bem ajustado à cabeça e ter certificação de segurança
-          </li>
-          <li>
-            <strong>Luvas</strong> - Protegem as mãos em quedas e melhoram a aderência no guidão
-          </li>
-          <li>
-            <strong>Óculos de proteção</strong> - Protegem contra poeira, insetos e raios UV
-          </li>
-          <li>
-            <strong>Roupas claras ou refletivas</strong> - Melhoram a visibilidade do ciclista
-          </li>
-          <li>
-            <strong>Iluminação</strong> - Lanterna frontal branca e traseira vermelha para pedalar à noite
-          </li>
-          <li>
-            <strong>Espelho retrovisor</strong> - Ajuda a monitorar o trânsito atrás do ciclista
-          </li>
-          <li>
-            <strong>Campainha ou buzina</strong> - Essencial para alertar pedestres e outros ciclistas
-          </li>
-          <li>
-            <strong>Trava de segurança</strong> - Para evitar furtos quando estacionar a bike
-          </li>
-          <li>
-            <strong>Kit de primeiros socorros</strong> - Básico para pequenos acidentes
-          </li>
-          <li>
-            <strong>Protetor solar</strong> - Fundamental em passeios diurnos
-          </li>
-        </ol>
+        <div class="lista-container">
+          <ol class="lista-colunas">
+            <li>
+              <span class="item-numero">1</span>
+              <span class="item-texto">Capacete (certificado)</span>
+            </li>
+            <li>
+              <span class="item-numero">2</span>
+              <span class="item-texto">Luvas</span>
+            </li>
+            <li>
+              <span class="item-numero">3</span>
+              <span class="item-texto">Óculos proteção</span>
+            </li>
+            <li>
+              <span class="item-numero">4</span>
+              <span class="item-texto">Roupas refletivas</span>
+            </li>
+            <li>
+              <span class="item-numero">5</span>
+              <span class="item-texto">Iluminação (frente/trás)</span>
+            </li>
+            <li>
+              <span class="item-numero">6</span>
+              <span class="item-texto">Espelho retrovisor</span>
+            </li>
+            <li>
+              <span class="item-numero">7</span>
+              <span class="item-texto">Campainha/buzina</span>
+            </li>
+            <li>
+              <span class="item-numero">8</span>
+              <span class="item-texto">Trava segurança</span>
+            </li>
+            <li>
+              <span class="item-numero">9</span>
+              <span class="item-texto">Kit primeiros socorros</span>
+            </li>
+            <li>
+              <span class="item-numero">10</span>
+              <span class="item-texto">Protetor solar</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <br>
+      <hr>
+      <div class="anuncio-container">
+        <img
+          src="Img/Anuncios/google_ads.jfif"
+          alt="Anuncio Google"
+          class="anuncio"
+        />
       </div>
-    </section>
-    <br>
+      <hr>
+      
 
     <section class="products_blogs">
       <h1 id="blogs">Blogs</h1>
@@ -802,7 +826,7 @@
             <li><a href="#blogs">Blog</a></li>
           </ul>
         </div>
-        <div class="footer-contact">
+        <div class="footer_contact">
           <h3 id="contato">Contato</h3>
           <p>contato@softbyke.com</p>
           <p>(61) 3333-3333</p>
@@ -813,15 +837,15 @@
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p><b>Grupo: </b>Felipe Barcelos, João Marcelo Guimarães, Gabrielle Gutierres e Matheus José.</p>
-        <br>
-        <p><b>Disciplina:</b> Programação Web</p>
-        <br>
-        <p><b>Curso: </b>Ciência da Computação.</p>
-        <br>
-        <p><b>Turma UN </b>- 0025 - Matutino</p>
-      </div>
+          <div class="footer_bottom">
+            <p><b>Grupo: </b>Felipe Barcelos, João Marcelo Guimarães, Gabrielle Gutierres e Matheus José.</p>
+            <br>
+            <p><b>Disciplina:</b> Programação Web</p>
+            <br>
+            <p><b>Curso: </b>Ciência da Computação.</p>
+            <br>
+            <p><b>Turma UN </b>- 0025 - Matutino</p>
+          </div>
     </footer>
   </body>
 </html>
