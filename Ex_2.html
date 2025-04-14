@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma</title>
+</head>
+<body>
+    <h1>Somando</h1>
+
+    <!-- Definição de formulário -->
+    <form name="FormSoma" action="felipe.bc@sempreceub.com" method="post">
+        Digite o Primeiro Numero ..........................................................: <input type="number" name="n1">
+        <br> <br>
+        Digite o Segundo Numero ...................................................: <input type="number" name="n2">
+        <br> <br>
+        <input type="button" name="btn_soma" value="soma" onclick="soma()">
+
+        <input type="reset" name="btn_reset" value="cancelar">
+
+    </form>
+
+    <!-- Inicio do JavaScript -->
+
+    <script type="text/javascript">
+        //OBJETIVO: capturar 
+
+        /* Definição de Variáveis*/
+        var js_n1;
+        var js_n2;
+        var js_soma;
+
+        // Criar funcao para somar
+
+        function soma(){
+            // entrada de dados
+            js_n1 = document.FormSoma.n1.value;
+            js_n2 = document.FormSoma.n2.value;
+            
+            // Processamento de dados
+            js_soma = parseInt(js_n1) + parseInt(js_n2);
+
+            //Saida de dados
+            window.alert(js_soma);
+        }
+
+    </script>
+    
+</body>
+</html>
