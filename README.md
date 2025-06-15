@@ -1,2 +1,2 @@
 # Aula_programacao_Web
-Repositório para materiais da faculdade
+Repositório para materiais e projetos acadêmicos
