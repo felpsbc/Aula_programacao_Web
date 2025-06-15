@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Fit Energy</title>
+  <link rel="stylesheet" href="style4.css" />
+
+</head>
+<body>
+  <header class="cabecalho">
+    <nav>
+      <span class="logo">
+        <span class="logo-fit">FIT</span><span class="logo-energy">ENERGY</span>
+      </span>
+      <ul class="menu">
+        <li><button class="Cabecalho-menu-item" onclick="window.location.href='projeto4.html'">Home</button></li>
+        <li><button class="Cabecalho-menu-item" onclick="window.location.href='exercicios.html'">Exercícios</button></li>
+        <li><button class="Cabecalho-menu-item" onclick="window.location.href='treinos.html'">Treinos</button></li>
+        <li><button class="Cabecalho-menu-item">Contato</button></li>
+      </ul>
+      <button class="Conteudo-botao" onclick="window.location.href='login.html'">LOGIN</button>
+    </nav>
+  </header>
+  <div class="linha-preta"></div>
+
+
+  <section id="membros-superiores">
+
+    <div class="container-botoes-box">
+
+        <div class="novo-container-botoes">
+            <button class="indicador-exercicio " onclick="window.location.href='projeto4.html'">Membros Superiores</button>
+
+            <button class="botao-exercicio" onclick="window.location.href='Peito.html'">Peito</button>
+            <button class="botao-exercicio" onclick="window.location.href='Costas.html'">Costas</button>
+            <button class="botao-exercicio" onclick="window.location.href='Biceps.html'">Bíceps</button>
+            <button class="botao-exercicio" onclick="window.location.href='Triceps.html'">Tríceps</button>
+            <button class="botao-exercicio" onclick="window.location.href='Ombro.html'">Ombro</button>
+
+        </div>
+
+        <div class="carrossel-container">
+          <div class="carrossel">
+            <div class="slide active">
+              <a href="https://blog.bodytech.com.br/treino-com-peso-livre-ou-maquinas-2/#:~:text=Pesos%20livres%20s%C3%A3o%20superiores%20para,maior%20seguran%C3%A7a%20durante%20os%20treinos." target="_blank" class="card-noticia">
+                <img src="imagem04.jpg" alt="Dicas para treino de pernas">
+                <p>Treino com peso livre ou maquinas? </p>
+              </a>
+            </div>
+            
+            <div class="slide">
+              <a href="https://blog.bodytech.com.br/por-que-mulheres-devem-treinar-bracos-e-ombros-2/" target="_blank" class="card-noticia">
+                <img src="imagem05.png" alt="Nutrição para membros inferiores">
+                <p>Por que mulheres devem treinar bracos e ombros</p>
+              </a>
+            </div>
+
+            <div class="slide">
+              <a href="https://ge.globo.com/eu-atleta/treinos/noticia/treino-nao-da-resultado-veja-possiveis-erros.ghtml" target="_blank" class="card-noticia">
+                <img src="imagem06.webp" alt="Alongamento pós-treino">
+                <p>Treino não da resultado? veja possiveis erros</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="indicadores">
+            <span class="indicador active" data-index="0"></span>
+            <span class="indicador" data-index="1"></span>
+            <span class="indicador" data-index="2"></span>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.slide');
+      const indicadores = document.querySelectorAll('.indicador');
+      let currentSlide = 0;
+      const slideInterval = 6000; // 5 segundos
+      
+      // Função para mostrar slide
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicadores.forEach(ind => ind.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        indicadores[index].classList.add('active');
+        currentSlide = index;
+      }
+      
+      // Função para próximo slide
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+      
+      // Configura o intervalo para troca automática
+      let slideTimer = setInterval(nextSlide, slideInterval);
+      
+      // Adiciona eventos aos indicadores
+      indicadores.forEach(ind => {
+        ind.addEventListener('click', function() {
+          clearInterval(slideTimer); // Pausa o carrossel automático
+          const slideIndex = parseInt(this.getAttribute('data-index'));
+          showSlide(slideIndex);
+          // Reinicia o carrossel automático após clique
+          slideTimer = setInterval(nextSlide, slideInterval);
+        });
+      });
+      
+      // Pausa o carrossel quando o mouse está sobre ele
+      const carrosselContainer = document.querySelector('.carrossel-container');
+      carrosselContainer.addEventListener('mouseenter', () => {
+        clearInterval(slideTimer);
+      });
+      
+      // Retoma o carrossel quando o mouse sai
+      carrosselContainer.addEventListener('mouseleave', () => {
+        slideTimer = setInterval(nextSlide, slideInterval);
+      });
+    });
+  </script>
+</body>
+</html>

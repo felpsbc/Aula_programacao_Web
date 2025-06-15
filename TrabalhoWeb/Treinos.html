@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinos Personalizados - FITENERGY</title>
+    <meta name="description" content="Gere seu treino personalizado">
+    <link rel= "stylesheet" type= "text/css" href="style4.css">   
+</head>
+<body>
+    <header>
+        <nav>
+            <span class="logo">
+            <span class="logo-fit">FIT</span><span class="logo-energy">ENERGY</span>
+            </span>
+
+            <ul class="menu">
+               <li><a href="Projeto4.html" class="Cabecalho-menu-item">Home</a></li>
+                <li><a href="#exercicios" class="Cabecalho-menu-item">Exercícios</a></li>
+                <li><a href="#treinos" class="Cabecalho-menu-item">Treinos</a></li>
+                <li><a href="#contato" class="Cabecalho-menu-item">Contato</a></li>
+            </ul>
+
+           <button class="Conteudo-botao" onclick="window.location.href='Login.html'">LOGIN</button>
+
+        </nav>
+    </header>
+
+    <main class="Conteudo">
+        <section class="Conteudo-secundario">
+            <h3 class="Conteudo-secundario-titulo">Gerador de Treinos Personalizados</h3>
+            <p class="Conteudo-secundario-paragrafo">
+                Crie seu treino ideal baseado nos nossos modelos comprovados! <br>
+                Selecione suas preferências e gere um treino personalizado que se adapta ao seu nível e objetivos.
+            </p>
+        </section>
+
+        <section id="gerador-treino">
+            <div class="form-container">
+                <h2 class="form-titulo">Configure Seu Treino</h2>
+                
+                <div class="linha-formulario">
+                    <div class="label-box">Modelo de Treino</div>
+                    <select id="modelo-treino" class="input-box">
+                        <option value="">Selecione um modelo</option>
+                        <option value="abc">Treino ABC</option>
+                        <option value="abcd">Treino ABCD</option>
+                        <option value="abcde">Treino ABCDE</option>
+                        <option value="push-pull">Push/Pull/Legs</option>
+                    </select>
+                </div>
+
+                <div class="linha-formulario">
+                    <div class="label-box">Nível</div>
+                    <select id="nivel" class="input-box">
+                        <option value="">Selecione seu nível</option>
+                        <option value="iniciante">Iniciante</option>
+                        <option value="intermediario">Intermediário</option>
+                        <option value="avancado">Avançado</option>
+                    </select>
+                </div>
+
+                <div class="linha-formulario">
+                    <div class="label-box">Objetivo</div>
+                    <select id="objetivo" class="input-box">
+                        <option value="">Selecione seu objetivo</option>
+                        <option value="hipertrofia">Hipertrofia</option>
+                        <option value="forca">Força</option>
+                        <option value="resistencia">Resistência</option>
+                        <option value="emagrecimento">Emagrecimento</option>
+                    </select>
+                </div>
+
+                <div class="linha-formulario">
+                    <div class="label-box">Dias por Semana</div>
+                    <select id="dias-semana" class="input-box">
+                        <option value="">Quantos dias?</option>
+                        <option value="3">3 dias</option>
+                        <option value="4">4 dias</option>
+                        <option value="5">5 dias</option>
+                        <option value="6">6 dias</option>
+                    </select>
+                </div>
+
+                <div class="linha-formulario">
+                    <div class="label-box">Foco Principal</div>
+                    <select id="foco" class="input-box">
+                        <option value="">Selecione o foco</option>
+                        <option value="membros-superiores">Membros Superiores</option>
+                        <option value="membros-inferiores">Membros Inferiores</option>
+                        <option value="equilibrado">Equilibrado</option>
+                        <option value="core">Core/Abdômen</option>
+                    </select>
+                </div>
+
+                <button class="form-botao" onclick="gerarTreino()">Gerar Meu Treino</button>
+            </div>
+        </section>
+
+        <section id="treino-gerado" style="display: none;">
+            <div class="box-contato-maior">
+                <h3 id="titulo-treino-gerado">Seu Treino Personalizado</h3>
+                <div id="conteudo-treino-gerado"></div>
+                <button class="form-botao" onclick="salvarTreino()">Salvar Treino</button>
+                <button class="novo-botao-principal" onclick="gerarNovoTreino()">Gerar Novo Treino</button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="treinos-salvos">
+            <div class="container-boxes">
+                <div class="box-contato">
+                    <h3>Meus Treinos Salvos</h3>
+                    <div id="lista-treinos-salvos">
+                        <p>Nenhum treino salvo ainda.</p>
+                        <p>Gere e salve seus treinos personalizados!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Base de dados dos exercícios por grupo muscular
+        const exercicios = {
+            gluteos: [
+                "Agachamento Sumô",
+                "Stiff",
+                "Elevação Pélvica",
+                "Mesa Flexora",
+                "Cadeira Flexora",
+                "Búlgaro",
+                "Hip Thrust",
+                "Agachamento Livre"
+            ],
+            costas: [
+                "Barra Fixa",
+                "Remada Curvada",
+                "Remada Livre",
+                "Pulldown",
+                "Remada Cavalinho",
+                "Levantamento Terra"
+            ],
+            biceps: [
+                "Rosca Direta",
+                "Rosca Martelo",
+                "Rosca Concentrada",
+                "Rosca 21",
+                "Rosca Alternada"
+            ],
+            quadriceps: [
+                "Agachamento Livre",
+                "Leg Press 180",
+                "Cadeira Extensora",
+                "Agachamento Búlgaro",
+                "Leg 180",
+                "Afundo"
+            ],
+            peito: [
+                "Supino Reto",
+                "Supino Inclinado",
+                "Crucifixo",
+                "Flexão",
+                "Supino Declinado",
+                "Peck Deck"
+            ],
+            ombros: [
+                "Desenvolvimento",
+                "Elevação Lateral",
+                "Elevação Frontal",
+                "Desenvolvimento Arnold",
+                "Remada Alta",
+                "Crucifixo Inverso"
+            ],
+            triceps: [
+                "Tríceps Testa",
+                "Tríceps Pulley",
+                "Mergulho",
+                "Tríceps Francês",
+                "Tríceps Coice"
+            ]
+        };
+
+        // Modelos de treino base
+        const modelosTreino = {
+            abc: {
+                nome: "Treino ABC",
+                divisao: {
+                    A: ["gluteos", "quadriceps"],
+                    B: ["costas", "biceps"],
+                    C: ["peito", "ombros", "triceps"]
+                }
+            },
+            abcd: {
+                nome: "Treino ABCD",
+                divisao: {
+                    A: ["gluteos"],
+                    B: ["costas", "biceps"],
+                    C: ["quadriceps"],
+                    D: ["peito", "ombros", "triceps"]
+                }
+            },
+            abcde: {
+                nome: "Treino ABCDE",
+                divisao: {
+                    A: ["gluteos"],
+                    B: ["costas"],
+                    C: ["quadriceps"],
+                    D: ["peito"],
+                    E: ["ombros", "triceps", "biceps"]
+                }
+            },
+            "push-pull": {
+                nome: "Push/Pull/Legs",
+                divisao: {
+                    Push: ["peito", "ombros", "triceps"],
+                    Pull: ["costas", "biceps"],
+                    Legs: ["gluteos", "quadriceps"]
+                }
+            }
+        };
+
+        function gerarTreino() {
+            const modelo = document.getElementById('modelo-treino').value;
+            const nivel = document.getElementById('nivel').value;
+            const objetivo = document.getElementById('objetivo').value;
+            const diasSemana = document.getElementById('dias-semana').value;
+            const foco = document.getElementById('foco').value;
+
+            if (!modelo || !nivel || !objetivo || !diasSemana || !foco) {
+                alert('Por favor, preencha todos os campos!');
+                return;
+            }
+
+            const treinoPersonalizado = criarTreinoPersonalizado(modelo, nivel, objetivo, diasSemana, foco);
+            exibirTreino(treinoPersonalizado);
+        }
+
+        function criarTreinoPersonalizado(modelo, nivel, objetivo, diasSemana, foco) {
+            const modeloBase = modelosTreino[modelo];
+            const treino = {
+                nome: modeloBase.nome + " Personalizado",
+                nivel: nivel,
+                objetivo: objetivo,
+                diasSemana: diasSemana,
+                foco: foco,
+                divisoes: {}
+            };
+
+            // Determinar número de exercícios baseado no nível
+            let numExercicios;
+            switch(nivel) {
+                case 'iniciante': numExercicios = 3; break;
+                case 'intermediario': numExercicios = 4; break;
+                case 'avancado': numExercicios = 5; break;
+            }
+
+            // Gerar exercícios para cada divisão
+            Object.keys(modeloBase.divisao).forEach(divisao => {
+                const gruposMusculares = modeloBase.divisao[divisao];
+                treino.divisoes[divisao] = [];
+
+                gruposMusculares.forEach(grupo => {
+                    const exerciciosGrupo = exercicios[grupo];
+                    const exerciciosSelecionados = selecionarExerciciosAleatorios(exerciciosGrupo, Math.ceil(numExercicios / gruposMusculares.length));
+                    
+                    exerciciosSelecionados.forEach(exercicio => {
+                        treino.divisoes[divisao].push({
+                            exercicio: exercicio,
+                            grupo: grupo,
+                            series: gerarSeries(nivel, objetivo),
+                            repeticoes: gerarRepeticoes(nivel, objetivo),
+                            descanso: gerarDescanso(objetivo)
+                        });
+                    });
+                });
+            });
+
+            return treino;
+        }
+
+        function selecionarExerciciosAleatorios(lista, quantidade) {
+            const embaralhado = [...lista].sort(() => 0.5 - Math.random());
+            return embaralhado.slice(0, quantidade);
+        }
+
+        function gerarSeries(nivel, objetivo) {
+            const basesSeries = {
+                iniciante: { hipertrofia: 3, forca: 3, resistencia: 2, emagrecimento: 3 },
+                intermediario: { hipertrofia: 4, forca: 4, resistencia: 3, emagrecimento: 3 },
+                avancado: { hipertrofia: 4, forca: 5, resistencia: 4, emagrecimento: 4 }
+            };
+            return basesSeries[nivel][objetivo];
+        }
+
+        function gerarRepeticoes(nivel, objetivo) {
+            const basesRepeticoes = {
+                hipertrofia: "8-12",
+                forca: "3-6",
+                resistencia: "15-20",
+                emagrecimento: "12-15"
+            };
+            return basesRepeticoes[objetivo];
+        }
+
+        function gerarDescanso(objetivo) {
+            const basesDescanso = {
+                hipertrofia: "60-90s",
+                forca: "2-3min",
+                resistencia: "30-45s",
+                emagrecimento: "45-60s"
+            };
+            return basesDescanso[objetivo];
+        }
+
+        function exibirTreino(treino) {
+            const tituloElement = document.getElementById('titulo-treino-gerado');
+            const conteudoElement = document.getElementById('conteudo-treino-gerado');
+            
+            tituloElement.textContent = treino.nome;
+            
+            let html = `
+                <p><strong>Nível:</strong> ${treino.nivel.charAt(0).toUpperCase() + treino.nivel.slice(1)}</p>
+                <p><strong>Objetivo:</strong> ${treino.objetivo.charAt(0).toUpperCase() + treino.objetivo.slice(1)}</p>
+                <p><strong>Frequência:</strong> ${treino.diasSemana} dias por semana</p>
+                <hr style="margin: 20px 0;">
+            `;
+
+            Object.keys(treino.divisoes).forEach(divisao => {
+                html += `<h4>${divisao}</h4>`;
+                treino.divisoes[divisao].forEach((item, index) => {
+                    html += `
+                        <p>${index + 1}. <strong>${item.exercicio}</strong><br>
+                        ${item.series} séries x ${item.repeticoes} repetições<br>
+                        Descanso: ${item.descanso}</p>
+                    `;
+                });
+                html += '<br>';
+            });
+
+            conteudoElement.innerHTML = html;
+            document.getElementById('treino-gerado').style.display = 'block';
+            
+            // Scroll para o treino gerado
+            document.getElementById('treino-gerado').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function salvarTreino() {
+            const titulo = document.getElementById('titulo-treino-gerado').textContent;
+            const conteudo = document.getElementById('conteudo-treino-gerado').innerHTML;
+            
+            // Simular salvamento no localStorage
+            if (!titulo || !conteudo) {
+                alert('Por favor, gere um treino antes de salvar!');
+                return;
+            }
+            let treinosSalvos = JSON.parse(localStorage.getItem('treinosSalvos') || '[]');
+            treinosSalvos.push({
+                id: Date.now(),
+                titulo: titulo,
+                conteudo: conteudo,
+                dataSalvo: new Date().toLocaleDateString('pt-BR')
+            });
+            localStorage.setItem('treinosSalvos', JSON.stringify(treinosSalvos));
+            
+            alert('Treino salvo com sucesso!');
+            atualizarTreinosSalvos();
+        }
+
+        function gerarNovoTreino() {
+            document.getElementById('treino-gerado').style.display = 'none';
+            document.getElementById('gerador-treino').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function atualizarTreinosSalvos() {
+            const treinosSalvos = JSON.parse(localStorage.getItem('treinosSalvos') || '[]');
+            const listaElement = document.getElementById('lista-treinos-salvos');
+            
+            if (treinosSalvos.length === 0) {
+                listaElement.innerHTML = '<p>Nenhum treino salvo ainda.</p><p>Gere e salve seus treinos personalizados!</p>';
+            } else {
+                let html = '';
+                treinosSalvos.slice(-3).forEach(treino => {
+                    html += `<p><strong>${treino.titulo}</strong><br>Salvo em: ${treino.dataSalvo}</p>`;
+                });
+                listaElement.innerHTML = html;
+            }
+        }
+
+        // Carregar treinos salvos ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            atualizarTreinosSalvos();
+        });
+    </script>
+</body>
+</html>
+

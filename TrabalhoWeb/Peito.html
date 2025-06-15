@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Fit Energy</title>
+  <link rel="stylesheet" href="style4.css" />
+
+</head>
+<body>
+  <header class="cabecalho">
+    <nav>
+      <span class="logo">
+        <span class="logo-fit">FIT</span><span class="logo-energy">ENERGY</span>
+      </span>
+      <ul class="menu">
+        <li><button class="Cabecalho-menu-item" onclick="window.location.href='projeto4.html'">Home</button></li>
+        <li><button class="Cabecalho-menu-item" onclick="window.location.href='exercicios.html'">Exercícios</button></li>
+        <li><button class="Cabecalho-menu-item" onclick="window.location.href='treinos.html'">Treinos</button></li>
+        <li><button class="Cabecalho-menu-item">Contato</button></li>
+      </ul>
+      <button class="Conteudo-botao" onclick="window.location.href='login.html'">LOGIN</button>
+    </nav>
+  </header>
+  <div class="linha-preta"></div>
+
+<br>
+<br>
+
+<section id="membros-inferiores">
+
+    <div class="container-botoes-box">
+
+        <div class="novo-container-botoes">
+
+            <button class="indicador-exercicio " onclick="window.location.href='projeto4.html'">Membros Superiores</button>
+
+            <button class="botao-exercicio-invertido" onclick="window.location.href='MembrosSuperiores.html'">Peito</button>
+            <button class="botao-exercicio" onclick="window.location.href='Costas.html'">Costas</button>
+            <button class="botao-exercicio" onclick="window.location.href='Biceps.html'">Bíceps</button>
+            <button class="botao-exercicio" onclick="window.location.href='Triceps.html'">Tríceps</button>
+            <button class="botao-exercicio" onclick="window.location.href='Ombro.html'">Ombro</button>
+
+
+        </div>
+
+<div class="box-verde-grande-exercicios">
+    <div class="gif-carousel">
+        <button class="carousel-arrow prev" onclick="prevGif()">&#10094;</button>
+        
+        <div class="gif-container">
+
+            <div class="gif-slide active">
+                <img src="gif19.webp" alt="Exercício para Quadríceps" class="exercise-gif">
+                <p class="exercise-description">Supino inclinado com halteres</p>
+            </div>
+
+            <div class="gif-slide">
+                <img src="gif20.webp" alt="Exercício para Glúteo e Posterior" class="exercise-gif">
+                <p class="exercise-description">Supino reto com barra</p>
+            </div>
+
+            <div class="gif-slide">
+                <img src="gif21.webp" alt="Exercício para Glúteo Isolado" class="exercise-gif">
+                <p class="exercise-description">Afundo nas barras paralelas</p>
+            </div>
+
+            <div class="gif-slide">
+                <img src="gif22.webp" alt="Exercício Completo de Pernas" class="exercise-gif">
+                <p class="exercise-description">Flexões</p>
+            </div>
+
+            <div class="gif-slide">
+                <img src="gif23.webp" alt="Exercício Completo de Pernas" class="exercise-gif">
+                <p class="exercise-description">Crossover com pegada alta
+</p>
+            </div>
+
+
+        </div>
+        
+        <button class="carousel-arrow next" onclick="nextGif()">&#10095;</button>
+    </div>
+</div>
+
+<script>
+let currentGifIndex = 0;
+const gifSlides = document.querySelectorAll('.gif-slide');
+
+function showGif(index) {
+    gifSlides.forEach(slide => slide.classList.remove('active'));
+    gifSlides[index].classList.add('active');
+    currentGifIndex = index;
+}
+
+function nextGif() {
+    currentGifIndex = (currentGifIndex + 1) % gifSlides.length;
+    showGif(currentGifIndex);
+}
+
+function prevGif() {
+    currentGifIndex = (currentGifIndex - 1 + gifSlides.length) % gifSlides.length;
+    showGif(currentGifIndex);
+}
+
+// Inicializa mostrando o primeiro GIF
+showGif(0);
+</script>

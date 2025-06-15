@@ -1,0 +1,784 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* ========= TIPOGRAFIA & BASE ========= */
+html {
+  font-family: "Questrial", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  background-color: #ffffff;
+  color: #9cbb7e;
+  font-size: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding-top: 16px;
+  list-style: none;
+}
+
+/* ========= CABEÇALHO ========= */
+.Cabecalho {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 16px;
+}
+
+.Cabecalho-menu {
+  display: flex;
+  gap: 32px;
+}
+
+.Cabecalho-menu-item {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  font-family: "Questrial", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  transition: opacity 0.3s ease;
+}
+
+.Cabecalho-menu-item:hover {
+  opacity: 0.4;
+}
+
+
+/* ========= imagens/exerciciosindicadoes etc ========= */
+
+.carrossel-container {
+  width: 100%;
+  height: 420px;
+  position: relative;
+  margin-top: 0;
+}
+
+.carrossel {
+  width: 100%;
+  height: 380px;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.card-noticia {
+  text-decoration: none;
+  color: rgb(24, 50, 33);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+}
+
+.card-noticia img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.card-noticia p {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+}
+
+.indicadores {
+  position: absolute;
+  bottom: 10px; /* Ajuste esta distância conforme necessário */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10; /* Garante que fiquem acima da imagem */
+
+
+ /* margin-top: 20px;  Adiciona espaço entre a imagem e os indicadores */
+}
+
+.indicador {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(175, 205, 172, 0.5);
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+
+ /* bottom: 10px;
+  margin-top: 0;*/
+}
+
+.indicador.active {
+  background-color:  #9cbb7e;
+}
+
+
+
+/* ========= BOTÕES ========= */
+    
+    
+.botao-exercicio{
+
+  background-color: #ffffff;
+  border-radius: 20px;
+  color: #9cbb7e;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 11px 14px;  /*12px 0*/
+  text-align: center;
+  width: 160px;
+  border: 2px solid #9cbb7e;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-colorborder-color 0.3s ease;
+}
+
+.botao-exercicio:hover {
+  background-color: #9cbb7e; /* Verde no hover */
+  color: #ffffff; /* Texto branco ao passar o mouse */
+  border-color: #9cbb7e; /* Mantém a borda verde */
+}
+
+
+.botao-exercicio-invertido{
+
+  background-color: #9cbb7e;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 11px 14px;  /*12px 0*/
+  text-align: center;
+  width: 160px;
+  border: 2px solid #9cbb7e;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-colorborder-color 0.3s ease;
+}
+
+.botao-exercicio-invertido:hover {
+  background-color: #ffffff; /* Verde no hover */
+  color: #9cbb7e; /* Texto branco ao passar o mouse */
+  border-color: #9cbb7e; /* Mantém a borda verde */
+}
+
+
+.indicador-exercicio01 { /*indicador das opçoes dos exerciicios na parte de exercicios*/
+  background-color: #9cbb7e;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 11px 14px;
+  text-align: center;
+  width: 160px;
+  border: 2px solid #9cbb7e;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.3s ease;
+
+}
+
+.indicador-exercicio01:hover {
+  background-color: #ffffff; /* Verde no hover */
+  color:#9cbb7e; /* Texto branco ao passar o mouse */
+  border-color: #9cbb7e; /* Mantém a borda verde */
+}
+
+
+.indicador-exercicio { /*indicador o nome dos exerciicios na parte de exercicios*/
+  background-color: #9cbb7e;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 11px 14px;
+  text-align: center;
+  border-color: #ffffff; /* Mantém a borda verde */
+}
+
+
+
+
+
+
+.botao-exercicio-falso {
+  background-color: #9cbb7e;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  
+  height: 40px;
+  width: 160px;
+  text-align: center;
+}
+
+
+.novo-botao-principal {
+  background-color: #9cbb7e;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  height: 40px;
+  transition: opacity 0.3s ease;
+  width: 160px;
+}
+
+.novo-botao-principal:hover {
+  opacity: 0.6;
+}
+
+.novo-botao-falso {
+  background-color: #ffffff;
+  border-radius: 20px;
+  color: #9cbb7e;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 0;
+  text-align: center;
+  width: 160px;
+  border: 2px solid #9cbb7e;
+}
+
+
+.botao-falso {
+  background-color: #b4d49e;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-family: "Questrial", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 16px 32px;
+  text-align: center;
+  width: 300px;
+}
+
+.botoes-falsos-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 60px auto;
+}
+
+.Conteudo-botao {
+  background-color: #9cbb7e;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Questrial", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 40px;
+  transition: opacity 0.3s ease;
+  width: 160px;
+}
+
+.Conteudo-botao:hover {
+  opacity: 0.6;
+}
+
+.Conteudo-principal-botao {
+  background-color: #b4d49e;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Sarala", serif;
+  font-size: 24px;
+  font-weight: 400;
+  height: 60px;
+  outline: none;
+  transition: opacity 0.3s ease;
+  width: 180px;
+}
+
+.Conteudo-principal-botao:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.form-botao {
+  align-self: center;
+  background-color: #b4d49e;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Questrial", sans-serif;
+  font-size: 16px;
+  padding: 12px 32px;
+  transition: opacity 0.3s ease;
+  width: 250px;
+}
+
+.form-botao:hover {
+  opacity: 0.7;
+}
+
+/* ========= FORMULÁRIOS ========= */
+.box-contato {
+  background-color: #b4d49e;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  color: #ffffff;
+  font-family: "Questrial", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 24px;
+  text-align: center;
+}
+
+.novo-container-botoes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  left: 10%; /* Ajuste para a posição desejada */
+  align-items: center;
+}
+
+.container-botoes-box {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1120px;
+  margin: auto;
+  justify-content: center; /* Move tudo mais para a direita */
+  padding-left: 50px; /* Ajuste conforme necessário */
+}
+
+section {
+  margin-bottom: 60px; /* Ajuste conforme necessário */
+}
+
+
+.novo-container-botoes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.box-verde-grande {
+  flex: 2; /* Mantém ela maior na proporção */
+  background-color: #9cbb7e;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  width: 100%; /* Ocupa todo o espaço disponível */
+  max-width: 600px; /* Ajuste conforme necessário */
+  height: 400px; /* Define uma altura maior para deixá-la mais quadrada */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+}
+
+
+/*parte dos exercicios css teste */
+
+.box-verde-grande-exercicios {
+  flex: 2;
+  background-color: rgba(156, 187, 126, 0.7); /* 0.7 = 70% de opacidade */
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px); /* Efeito de desfoque opcional */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+  position: relative;
+  overflow: hidden;
+}
+
+
+.gif-carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.gif-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gif-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.gif-slide.active {
+    opacity: 1;
+}
+
+.exercise-gif {
+    max-width: 80%;
+    max-height: 70%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.exercise-description {
+    margin-top: 15px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+
+
+
+
+.box-contato p {
+  margin: 8px 0;
+}
+
+.box-contato strong {
+  font-weight: 700;
+}
+
+.caixa-entrada-azul {
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 24px;
+}
+
+.form-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "Questrial", sans-serif;
+  gap: 24px;
+  margin: 64px auto 40px auto;
+  max-width: 600px;
+  padding: 0 16px;
+}
+
+.form-titulo {
+  margin-bottom: 16px;
+}
+
+.input-box {
+  background-color: #e3e8f3;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  color: #333;
+  font-size: 16px;
+  padding: 12px 16px;
+  width: 300px;
+}
+.container-boxes {
+  display: flex;
+  justify-content: space-between; /* Distribui as caixas igualmente */
+  align-items: center;
+  gap: 30px; /* Espaço entre elas */
+  padding: 40px;
+  max-width: 1120px;
+  margin: auto;
+}
+
+.box-contato { 
+  flex: 1; /* Faz com que as boxes se ajustem ao espaço disponível */
+  min-height: 200px;
+  max-width: 350px;
+  text-align: center;
+}
+.box-contato-maior {
+  flex: 3;
+  max-width: 900px;
+  padding: 40px;
+  background-color: #b4d49e;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: auto; /* Centraliza na tela */
+  display: flex;
+  flex-direction: column; /* Organiza os elementos verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  margin-bottom: 50px;
+}
+
+.box-contato-maior p {
+  margin: 12px 0; /* Aumenta o espaçamento entre as linhas */
+  font-size: 18px; /* Opcional: Ajusta tamanho da fonte */
+}
+
+
+
+.label-box {
+  background-color: #b4d49e;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  min-width: 120px;
+  padding: 12px 24px;
+  text-align: center;
+}
+
+.linha-formulario {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.link-cadastro {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.link-cadastro a {
+  color: #9cbb7e;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #d4b89f; /* Tom bege/marrom claro */
+  margin: 40px auto;
+  width: 80%;
+  opacity: 0.6; /* Deixa a linha mais suave */
+}
+
+
+/* ========= CONTEÚDO E SEÇÕES ========= */
+.Conteudo {
+  background-color: #ffffff;
+  border-top: 0.4px solid #000000;
+}
+
+.Conteudo-principal {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.Conteudo-principal-escrito {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.Conteudo-principal-escrito-subtitulo {
+  color: #9cbb7e;
+  font-family: "Questrial", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.Conteudo-principal-escrito-titulo {
+  color: #9cbb7e;
+  font-family: "Questrial", sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+}
+
+.Conteudo-secundario {
+  align-items: center;
+  color: #ecd6c4;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+  margin-top: 40px;
+}
+
+.Conteudo-secundario-paragrafo {
+  background-color: #b4d49e;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 24px auto;
+  max-width: 800px;
+  padding: 24px;
+  text-align: left;
+}
+
+.Conteudo-secundario-titulo {
+  color: #9cbb7e;
+  font-family: "Questrial", sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  padding-bottom: 16px;
+  padding-top: 24px;
+  border-top: 0.4px solid #ecd6c4;
+}
+
+/* ========= ELEMENTOS GERAIS ========= */
+.linha-preta {
+  background-color: #000000;
+  height: 1px;
+  width: 100%;
+}
+
+.logo {
+  color: #9cbb7e;
+  font-family: "Questrial", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.logo-fit {  /********************************************************************************************************/
+  background-color: #9cbb7e;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 200;
+  padding: 4px 12px;
+  text-transform: uppercase;
+}
+
+.logo-energy {
+  color: #000000;
+  font-size: 24px;
+  font-weight: 200;
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+.login {
+  color: #9cbb7e;
+  font: 600;
+}
+
+.menu {
+  color: #00000080;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1120px;
+  padding: 1.5rem;
+}
+
+.rodape {
+  border-top: 0.4px solid #000000;
+  padding: 32px;
+}
+
+.rodape-imagem {
+  display: block;
+  height: 80px;
+  margin: 0 auto;
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro - Fit Energy</title>
+  <link rel="stylesheet" href="style4.css" />
+</head>
+<body>
+<header class="cabecalho">
+  <nav>
+    <span class="logo">
+      <span class="logo-fit">FIT</span><span class="logo-energy">ENERGY</span>
+    </span>
+    <ul class="menu">
+      <li><button class="Cabecalho-menu-item" onclick="window.location.href='Projeto4.html'">Home</button></li>
+      <li><button class="Cabecalho-menu-item" onclick="window.location.href='exercicios.html'">Exercícios</button></li>
+      <li><button class="Cabecalho-menu-item" onclick="window.location.href='Treinos.html'">Treinos</button></li>
+      <li><button class="Cabecalho-menu-item">Contato</button></li>
+    </ul>
+    <button class="Conteudo-botao" onclick="window.location.href='Login.html'">VOLTAR PARA LOGIN</button>
+  </nav>
+</header>
+<div class="linha-preta"></div>
+
+<section class="form-container">
+  <h2 class="form-titulo">Cadastro do Aluno</h2>
+
+  <form id="cadastroForm">
+    <div class="linha-formulario">
+      <div class="label-box">Nome</div>
+      <input type="text" id="nome" class="input-box" placeholder="Digite seu nome completo" required />
+    </div>
+
+    <div class="linha-formulario">
+      <div class="label-box">CPF</div>
+      <input type="text" id="cpf" class="input-box" placeholder="000.000.000-00" required />
+    </div>
+
+    <div class="linha-formulario">
+      <div class="label-box">Email</div>
+      <input type="email" id="email" class="input-box" placeholder="exemplo@dominio.com" required />
+    </div>
+
+    <div class="linha-formulario">
+      <div class="label-box">Senha</div>
+      <input type="password" id="senha" class="input-box" placeholder="Crie uma senha segura" required />
+    </div>
+
+    <div class="linha-formulario">
+      <div class="label-box">Confirmar Senha</div>
+      <input type="password" id="confirmarSenha" class="input-box" placeholder="Confirme sua senha" required />
+    </div>
+
+    <div class="linha-formulario">
+      <div class="label-box">Endereço</div>
+      <input type="text" id="endereco" class="input-box" placeholder="Rua Exemplo, nº 123 - 00000-000" />
+    </div>
+
+    <div class="linha-formulario">
+      <div class="label-box">Contato</div>
+      <input type="text" id="contato" class="input-box" placeholder="(00) 91234-5678" />
+    </div>
+
+    <button type="submit" class="form-botao">Cadastrar</button>
+  </form>
+
+  <div id="mensagem-cadastro" style="margin-top: 20px; text-align: center; display: none;"></div>
+</section>
+
+<script>
+document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nome = document.getElementById('nome').value;
+    const cpf = document.getElementById('cpf').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+    const confirmarSenha = document.getElementById('confirmarSenha').value;
+    const endereco = document.getElementById('endereco').value;
+    const contato = document.getElementById('contato').value;
+    const mensagemDiv = document.getElementById('mensagem-cadastro');
+    
+    // Limpar mensagens anteriores
+    mensagemDiv.style.display = 'none';
+    
+    // Validações
+    if (!nome || !cpf || !email || !senha || !confirmarSenha) {
+        mostrarMensagem('Por favor, preencha todos os campos obrigatórios!', 'erro');
+        return;
+    }
+    
+    if (senha !== confirmarSenha) {
+        mostrarMensagem('As senhas não coincidem!', 'erro');
+        return;
+    }
+    
+    if (senha.length < 6) {
+        mostrarMensagem('A senha deve ter pelo menos 6 caracteres!', 'erro');
+        return;
+    }
+    
+    if (!validarCPF(cpf)) {
+        mostrarMensagem('CPF inválido!', 'erro');
+        return;
+    }
+    
+    if (!validarEmail(email)) {
+        mostrarMensagem('Email inválido!', 'erro');
+        return;
+    }
+    
+    // Verificar se usuário já existe
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    
+    if (usuarios.find(u => u.cpf === cpf)) {
+        mostrarMensagem('CPF já cadastrado!', 'erro');
+        return;
+    }
+    
+    if (usuarios.find(u => u.email === email)) {
+        mostrarMensagem('Email já cadastrado!', 'erro');
+        return;
+    }
+    
+    // Criar novo usuário
+    const novoUsuario = {
+        id: Date.now(),
+        nome: nome,
+        cpf: cpf,
+        email: email,
+        senha: senha,
+        endereco: endereco,
+        contato: contato,
+        dataCadastro: new Date().toISOString()
+    };
+    
+    // Salvar usuário
+    usuarios.push(novoUsuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    
+    mostrarMensagem('Cadastro realizado com sucesso! Redirecionando para login...', 'sucesso');
+    
+    // Limpar formulário
+    document.getElementById('cadastroForm').reset();
+    
+    // Redirecionar após 3 segundos
+    setTimeout(() => {
+        window.location.href = 'Login.html';
+    }, 3000);
+});
+
+function mostrarMensagem(texto, tipo) {
+    const mensagemDiv = document.getElementById('mensagem-cadastro');
+    mensagemDiv.textContent = texto;
+    mensagemDiv.style.display = 'block';
+    mensagemDiv.style.color = tipo === 'sucesso' ? '#9cbb7e' : '#ff6b6b';
+    mensagemDiv.style.fontWeight = 'bold';
+}
+
+function validarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, '');
+    if (cpf.length !== 11) return false;
+    
+    // Verificar se todos os dígitos são iguais
+    if (/^(\d)\1{10}$/.test(cpf)) return false;
+    
+    // Validar dígitos verificadores
+    let soma = 0;
+    for (let i = 0; i < 9; i++) {
+        soma += parseInt(cpf.charAt(i)) * (10 - i);
+    }
+    let resto = 11 - (soma % 11);
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.charAt(9))) return false;
+    
+    soma = 0;
+    for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf.charAt(i)) * (11 - i);
+    }
+    resto = 11 - (soma % 11);
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.charAt(10))) return false;
+    
+    return true;
+}
+
+function validarEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+// Formatar CPF automaticamente
+document.getElementById('cpf').addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    value = value.replace(/(\d{3})(\d)/, '$1.$2');
+    value = value.replace(/(\d{3})(\d)/, '$1.$2');
+    value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    e.target.value = value;
+});
+
+// Formatar telefone automaticamente
+document.getElementById('contato').addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    value = value.replace(/(\d{2})(\d)/, '($1) $2');
+    value = value.replace(/(\d{5})(\d)/, '$1-$2');
+    e.target.value = value;
+});
+</script>
+
+</body>
+</html>

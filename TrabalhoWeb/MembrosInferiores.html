@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Fit Energy</title>
+  <link rel="stylesheet" href="style4.css" />
+
+</head>
+<body>
+  <header class="cabecalho">
+    <nav>
+      <span class="logo">
+        <span class="logo-fit">FIT</span><span class="logo-energy">ENERGY</span>
+      </span>
+      <ul class="menu">
+        <li><button class="Cabecalho-menu-item" onclick="window.location.href='projeto4.html'">Home</button></li>
+        <li><button class="Cabecalho-menu-item" onclick="window.location.href='exercicios.html'">Exercícios</button></li>
+        <li><button class="Cabecalho-menu-item" onclick="window.location.href='treinos.html'">Treinos</button></li>
+        <li><button class="Cabecalho-menu-item">Contato</button></li>
+      </ul>
+      <button class="Conteudo-botao" onclick="window.location.href='login.html'">LOGIN</button>
+    </nav>
+  </header>
+  <div class="linha-preta"></div>
+
+
+  <section id="membros-inferiores">
+    <div class="container-botoes-box">
+      <div class="novo-container-botoes">
+        
+        <button class="indicador-exercicio " onclick="window.location.href='projeto4.html'">Membros Inferiores</button>
+        <button class="botao-exercicio" onclick="window.location.href='Quadriceps.html'">Quadríceps</button>
+        <button class="botao-exercicio" onclick="window.location.href='Gluteo.html'">Glúteo e Posterior</button>
+        <button class="botao-exercicio" onclick="window.location.href='LegdayGeral.html'">Legday geral</button>
+
+      </div>
+
+
+        <div class="carrossel-container">
+          <div class="carrossel">
+
+            <div class="slide active">
+              <a href="https://g1.globo.com/saude/noticia/2025/02/13/por-que-fortalecer-as-pernas-e-essencial-para-a-saude-do-cerebro-e-para-envelhecer-bem.ghtml" target="_blank" class="card-noticia">
+                <img src="imagem01.avif" alt="Dicas para treino de pernas">
+                <p>Por que fortalecer as pernas e essencial para a saude do cerebro e para envelhecer bem ?</p>
+              </a>
+            </div>
+            
+            <div class="slide">
+              <a href="https://blog.bodytech.com.br/melhores-exercicios-para-deixar-as-pernas-saradas-para-o-verao/" target="_blank" class="card-noticia">
+                <img src="imagem02.jpg" alt="Nutrição para membros inferiores">
+                <p>Melhores exercícios para as pernas </p>
+              </a>
+            </div>
+
+            <div class="slide">
+              <a href="https://www.correiobraziliense.com.br/revista-do-correio/2024/02/6806384-leg-day-entenda-a-importancia-de-treinar-os-membros-inferiores.html" target="_blank" class="card-noticia">
+                <img src="imagem03.webp" alt="Alongamento pós-treino">
+                <p>Leg day entenda a importancia de treinar os membros inferiores</p>
+              </a>
+            </div>
+
+          </div>
+
+          <div class="indicadores">
+            <span class="indicador active" data-index="0"></span>
+            <span class="indicador" data-index="1"></span>
+            <span class="indicador" data-index="2"></span>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.slide');
+      const indicadores = document.querySelectorAll('.indicador');
+      let currentSlide = 0;
+      const slideInterval = 6000; // 5 segundos
+      
+      // Função para mostrar slide
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicadores.forEach(ind => ind.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        indicadores[index].classList.add('active');
+        currentSlide = index;
+      }
+      
+      // Função para próximo slide
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+      
+      // Configura o intervalo para troca automática
+      let slideTimer = setInterval(nextSlide, slideInterval);
+      
+      // Adiciona eventos aos indicadores
+      indicadores.forEach(ind => {
+        ind.addEventListener('click', function() {
+          clearInterval(slideTimer); // Pausa o carrossel automático
+          const slideIndex = parseInt(this.getAttribute('data-index'));
+          showSlide(slideIndex);
+          // Reinicia o carrossel automático após clique
+          slideTimer = setInterval(nextSlide, slideInterval);
+        });
+      });
+      
+      // Pausa o carrossel quando o mouse está sobre ele
+      const carrosselContainer = document.querySelector('.carrossel-container');
+      carrosselContainer.addEventListener('mouseenter', () => {
+        clearInterval(slideTimer);
+      });
+      
+      // Retoma o carrossel quando o mouse sai
+      carrosselContainer.addEventListener('mouseleave', () => {
+        slideTimer = setInterval(nextSlide, slideInterval);
+      });
+    });
+  </script>
+</body>
+</html>
